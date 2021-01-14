@@ -593,7 +593,7 @@ int main()
 	ISound* ambiental = engine->play2D("Audio/All Star - Smash Mouth [Lyrics].mp3", true);
 	ISound* ambiental2 = engine2->play2D("Audio/cheeseburger-family-jack-stauber.mp3", true);
 
-	
+
 
 	//Inicialización de KeyFrames
 	/*for (int i = 0; i < MAX_FRAMES; i++)
@@ -1346,7 +1346,7 @@ int main()
 		//telefono
 		//base
 		model = glm::rotate(glm::mat4(1.0f), glm::radians(0.0f), glm::vec3(1.0f, 0.0f, 0.0f));
-		model = glm::translate(model, glm::vec3(25.0f, 8.0f , -65.0f));
+		model = glm::translate(model, glm::vec3(25.0f, 8.0f, -65.0f));
 		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
 		tmp = model = glm::rotate(model, glm::radians(0.0f + movcuerpo), glm::vec3(0.0f, 1.0f, 0.0));
 		staticShader.setMat4("model", model);
@@ -1418,14 +1418,14 @@ int main()
 
 		if (ringPhone) {
 			if (ringIda) {
-				rotPhone+=10.0;
+				rotPhone += 10.0;
 				if (rotPhone > 25) {
 					ringIda = false;
 					ringRegreso = true;
 				}
 			}
 			else {
-				rotPhone-=10.0;
+				rotPhone -= 10.0;
 				if (rotPhone < -25) {
 					ringIda = true;
 					ringRegreso = false;
@@ -1437,7 +1437,7 @@ int main()
 			ringIda = false;
 			ringRegreso = false;
 		}
-		
+
 		//musica
 		if (musicFondo) {
 			engine->setAllSoundsPaused(false);
@@ -1464,13 +1464,13 @@ int main()
 
 
 
-		// -------------------------------------------------------------------------------------------------------------------------
-		// Termina Escenario
-		// -------------------------------------------------------------------------------------------------------------------------
+			// -------------------------------------------------------------------------------------------------------------------------
+			// Termina Escenario
+			// -------------------------------------------------------------------------------------------------------------------------
 
-		//-------------------------------------------------------------------------------------
-		// draw skybox as last
-		// -------------------
+			//-------------------------------------------------------------------------------------
+			// draw skybox as last
+			// -------------------
 		skyboxShader.use();
 		skybox.Draw(skyboxShader, view, projection, camera);
 
@@ -1593,7 +1593,7 @@ int main()
 			}
 		}
 
-		
+
 
 		// glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
 		// -------------------------------------------------------------------------------
@@ -1655,7 +1655,7 @@ void my_input(GLFWwindow *window, int key, int scancode, int action, int mode)
 	}
 
 	//boton animacion tele
-	if (glfwGetKey(window, GLFW_KEY_T) == GLFW_PRESS && animTele==false) {
+	if (glfwGetKey(window, GLFW_KEY_T) == GLFW_PRESS && animTele == false) {
 		animTele = true;
 	}
 	if (glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS) {
